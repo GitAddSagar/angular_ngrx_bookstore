@@ -1,0 +1,9 @@
+<div class="book-contaniner">
+    <div *ngFor="let book of books$ |async">
+        <div class="book-card">
+            <h2 class="title">{{book.title}}</h2>
+            <p class="author">{{book.author}}</p>
+            <p class="price">{{book.price}}</p>
+        </div>
+    </div>
+</div>
