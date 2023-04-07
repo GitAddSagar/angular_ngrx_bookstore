@@ -29,3 +29,13 @@ export const invokeDELETEBooksAPISuccess = createAction(
   '[Books API] invoke DELETE Books API Success',
   props<{ id: number }>()
 );
+
+export const invokePATCHBooksAPI = createAction(
+  '[Books API] invoke PATCH Books API',
+  props<{ id:number,patchDetails: Book }>()
+);
+
+export const invokePATCHBooksAPISuccess = createAction(
+  '[Books API] invoke PATCH Books API Success',
+  props<{ id:number,patchDetails: Book }>()
+);

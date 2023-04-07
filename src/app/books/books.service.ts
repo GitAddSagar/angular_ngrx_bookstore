@@ -21,4 +21,10 @@ export class BooksService {
   delete(id: number) {
     return this.http.delete<Book>(`https://data-vercel.vercel.app/books/${id}`);
   }
+
+  patch(id:number,patchDetails: Book) {
+    return this.http.patch<Book>(`https://data-vercel.vercel.app/books/${id}`, {
+      ...patchDetails,
+    });
+  }
 }

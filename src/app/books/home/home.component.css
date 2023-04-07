@@ -13,3 +13,12 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
+.buttonGroup{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.buttonGroup button{
+    padding: 10px;
+}

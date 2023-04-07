@@ -1,6 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import { Book } from './book';
 import {
+  invokeDELETEBooksAPISuccess,
   invokeGETBooksAPISuccess,
   invokePOSTBooksAPISuccess,
 } from './book.action';
@@ -13,7 +14,11 @@ export const bookReducer = createReducer(
     return allBooks;
   }),
   on(invokePOSTBooksAPISuccess, (state, { newBook }) => {
-    alert('Book added successfully')
+    alert('Book added successfully');
     return [...state, newBook];
+  }),
+  on(invokeDELETEBooksAPISuccess, (state, { id }) => {
+    alert('Book deleted successfully');
+    return state.filter((book) => book.id !== id);
   })
 );

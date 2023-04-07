@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { BooksService } from '../books.service';
 import {
-  invokeDELETEBooksAPI,
-  invokeDELETEBooksAPISuccess,
-  invokeGETBooksAPI,
-  invokeGETBooksAPISuccess,
   invokePOSTBooksAPI,
   invokePOSTBooksAPISuccess,
+  invokeGETBooksAPI,
+  invokeGETBooksAPISuccess,
+  invokePATCHBooksAPI,
+  invokePATCHBooksAPISuccess,
+  invokeDELETEBooksAPI,
+  invokeDELETEBooksAPISuccess,
 } from './book.action';
 import { map, switchMap } from 'rxjs';
 import { Book } from './book';
@@ -35,6 +37,21 @@ export class BookEffects {
           .post(action.newBook)
           .pipe(
             map((data: Book) => invokePOSTBooksAPISuccess({ newBook: data }))
+          );
+      })
+    )
+  );
+
+  editBook$ = createEffect(() =>
+    this.action$.pipe(
+      ofType(invokePATCHBooksAPI),
+      switchMap((action) => {
+        return this.bookService
+          .patch(action.id,action.patchDetails)
+          .pipe(
+            map((data: Book) =>
+              invokePATCHBooksAPISuccess({id:data.id, patchDetails: data })
+            )
           );
       })
     )
