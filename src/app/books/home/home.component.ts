@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { selectBooks } from '../store/book.selector';
-import { invokeBooksAPI } from '../store/book.action';
+import { invokeDELETEBooksAPI, invokeGETBooksAPI } from '../store/book.action';
 
 
 @Component({
@@ -14,7 +14,12 @@ export class HomeComponent implements OnInit {
 
   books$ = this.store.pipe(select(selectBooks));
 
+  deleteBook(id:number)
+  {this.store.dispatch(invokeDELETEBooksAPI({ id }));
+    console.log('deleteBook')
+  }
+
   ngOnInit(): void {
-   this.store.dispatch(invokeBooksAPI())
+   this.store.dispatch(invokeGETBooksAPI())
   }
 }
