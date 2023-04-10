@@ -9,21 +9,21 @@ export class BooksService {
   constructor(private http: HttpClient) {}
 
   get() {
-    return this.http.get<Book[]>('https://data-vercel.vercel.app/books');
+    return this.http.get<Book[]>('http://localhost:8080/books');
   }
 
   post(newBook: Book) {
-    return this.http.post<Book>('https://data-vercel.vercel.app/books', {
+    return this.http.post<Book>('http://localhost:8080/books', {
       ...newBook,
     });
   }
 
   delete(id: number) {
-    return this.http.delete<Book>(`https://data-vercel.vercel.app/books/${id}`);
+    return this.http.delete<Book>(`http://localhost:8080/books/${id}`);
   }
 
   patch(id:number,patchDetails: Book) {
-    return this.http.patch<Book>(`https://data-vercel.vercel.app/books/${id}`, {
+    return this.http.patch<Book>(`http://localhost:8080/books/${id}`, {
       ...patchDetails,
     });
   }
