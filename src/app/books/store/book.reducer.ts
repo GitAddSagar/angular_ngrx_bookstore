@@ -23,7 +23,7 @@ export const bookReducer = createReducer(
   on(invokePATCHBooksAPI, (state, { id }) => {
     return state.map((book) => {
       if (book.id === id) {
-        return { ...book, title: 'Title has been updated' };
+        return { ...book, title: 'Changed Title',author:'Changed Author'};
       }
       return book;
     });
