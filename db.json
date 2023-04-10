@@ -14,9 +14,9 @@
     },
     {
       "id": 3,
-      "title": "Changed Title",
-      "author": "Changed Author",
-      "price": 100
+      "title": "1984",
+      "author": "George Orwell",
+      "price": 10.99
     },
     {
       "id": 4,
@@ -61,28 +61,28 @@
       "price": 6.99
     },
     {
-      "id": 513,
-      "title": "513 years in a Decade",
+      "id": 696,
+      "title": "696 years in a Decade",
       "author": "Shah Rukh Khan",
-      "price": 513
+      "price": 696
     },
     {
-      "id": 672,
-      "title": "672 years in a Decade",
+      "id": 549,
+      "title": "549 years in a Decade",
       "author": "Shah Rukh Khan",
-      "price": 672
+      "price": 549
     },
     {
-      "id": 72,
-      "title": "72 years in a Decade",
+      "id": 684,
+      "title": "684 years in a Decade",
       "author": "Shah Rukh Khan",
-      "price": 72
+      "price": 684
     },
     {
-      "id": 563,
-      "title": "563 years in a Decade",
+      "id": 693,
+      "title": "693 years in a Decade",
       "author": "Shah Rukh Khan",
-      "price": 563
+      "price": 693
     }
   ]
 }

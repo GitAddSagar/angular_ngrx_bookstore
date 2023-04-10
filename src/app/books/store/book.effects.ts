@@ -64,7 +64,10 @@ export class BookEffects {
         return this.bookService
           .delete(action.id)
           .pipe(
-            map((data: Book) => invokeDELETEBooksAPISuccess({ id: data.id }))
+            map((data: Book) => {
+              console.log('I am from Effects')
+              return invokeDELETEBooksAPISuccess({ id: data.id })
+            })
           );
       })
     )

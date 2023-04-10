@@ -9,11 +9,11 @@ export class BooksService {
   constructor(private http: HttpClient) {}
 
   get() {
-    return this.http.get<Book[]>('http://localhost:8080/books');
+    return this.http.get<Book[]>(`http://localhost:8080/books`);
   }
 
   post(newBook: Book) {
-    return this.http.post<Book>('http://localhost:8080/books', {
+    return this.http.post<Book>(`http://localhost:8080/books`, {
       ...newBook,
     });
   }
